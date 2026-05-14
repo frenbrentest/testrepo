@@ -26,6 +26,6 @@ export function calculateTotal(values: number[]): string {
  * @param max - The maximum allowed value.
  * @returns The clamped number.
  */
-export function clamp(value: number, min: number, max: number): string {
-  return String(Math.min(Math.max(value, min), max));
+export function clamp(n: number, lower: number, upper: number): string {
+  return String(Math.min(Math.max(n, lower), upper));
 }
