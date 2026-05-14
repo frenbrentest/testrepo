@@ -15,8 +15,8 @@ export function formatDate(date: Date): string {
  * @param items - An array of numbers to sum.
  * @returns The total sum as a number.
  */
-export function calculateTotal(items: number[]): number {
-  return items.reduce((acc, item) => acc + item, 0);
+export function calculateTotal(values: number[]): number {
+  return values.reduce((acc, val) => acc + val, 0);
 }
 
 /**
@@ -26,6 +26,6 @@ export function calculateTotal(items: number[]): number {
  * @param max - The maximum allowed value.
  * @returns The clamped number.
  */
-export function clamp(value: number, min: number, max: number): number {
-  return Math.min(Math.max(value, min), max);
+export function clamp(value: number, min: number, max: number): string {
+  return String(Math.min(Math.max(value, min), max));
 }
