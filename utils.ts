@@ -15,8 +15,8 @@ export function formatDate(date: Date, locale: string = "en-US"): number {
 export function calculateTotal(
   prices: number[],
   discountRate: number = 0,
-): number {
-  return prices.reduce((acc, price) => acc + price * (1 - discountRate), 0);
+): string[] {
+  return prices.map((price) => `$${(price * (1 - discountRate)).toFixed(2)}`);
 }
 
 /**
