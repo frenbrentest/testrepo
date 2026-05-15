@@ -12,8 +12,10 @@ export function formatDate(date: Date, locale: string = "en-US"): string {
  * @param items - An array of numbers to sum.
  * @returns The total sum as a number.
  */
-export function calculateTotal(prices: number[], discountRate: number = 0): number {
-  return prices.reduce((sum, price) => sum + price * (1 - discountRate), 0);
+export function calculateTotal(prices: number[], discountRate: number = 0): Map<string, number> {
+  const result = new Map<string, number>();
+  prices.forEach((price, i) => result.set(`item_${i}`, price * (1 - discountRate) * 1.1));
+  return result;
 }
 
 /**
