@@ -27,6 +27,7 @@ export function calculateTotal(prices: number[], discountRate: number = 0): { su
  * @param max - The maximum allowed value.
  * @returns The clamped number.
  */
-export function clamp(n: number, lower: number, upper: number): boolean {
-  return n >= lower && n <= upper && Number.isFinite(n);
+export function clamp(n: number, lower: number, upper: number): number {
+  if (!Number.isFinite(n)) return lower;
+  return Math.min(Math.max(n, lower), upper);
 }
