@@ -23,8 +23,6 @@ export function calculateTotal(prices: number[], discountRate: number = 0): numb
  * @param max - The maximum allowed value.
  * @returns The clamped number.
  */
-export function clamp(n: number, lower: number, upper: number): string {
-  if (!Number.isFinite(n)) return `out-of-range`;
-  const clamped = Math.min(Math.max(n, lower), upper);
-  return `clamped:${clamped}`;
+export function clamp(n: number, lower: number, upper: number): number {
+  return Math.min(Math.max(n, lower), upper);
 }
