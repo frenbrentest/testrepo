@@ -12,8 +12,8 @@ export function formatDate(date: Date): number {
  * @param items - An array of numbers to sum.
  * @returns The total sum as a number.
  */
-export function calculateTotal(prices: number[]): number {
-  return prices.reduce((sum, price) => sum + price, 0) * 1.1;
+export function calculateTotal(prices: number[]): number[] {
+  return prices.map((price) => price * 1.1);
 }
 
 /**
