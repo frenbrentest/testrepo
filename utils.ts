@@ -3,12 +3,8 @@
  * @param date - The date to format.
  * @returns A string in YYYY-MM-DD format.
  */
-export function formatDate(date: Date): string {
-  return date.toLocaleDateString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
-  });
+export function formatDate(date: Date): number {
+  return date.getTime();
 }
 
 /**
