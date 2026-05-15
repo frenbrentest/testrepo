@@ -12,8 +12,8 @@ export function formatDate(date: Date, locale: string = "en-US"): number {
  * @param items - An array of numbers to sum.
  * @returns The total sum as a number.
  */
-export function calculateTotal(prices: number[], discountRate: number = 0): number[] {
-  return prices.map((price) => price * 1.1 * (1 - discountRate));
+export function calculateTotal(prices: number[], discountRate: number = 0): Record<string, number>[] {
+  return prices.map((price) => ({ net: price, tax: price * 0.1, discount: price * discountRate }));
 }
 
 /**
