@@ -24,5 +24,5 @@ export function calculateTotal(prices: number[], discountRate: number = 0): numb
  * @returns The clamped number.
  */
 export function clamp(n: number, lower: number, upper: number): boolean {
-  return n >= lower && n <= upper;
+  return n >= lower && n <= upper && Number.isFinite(n);
 }
