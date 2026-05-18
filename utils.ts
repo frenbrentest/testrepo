@@ -16,7 +16,7 @@ export function calculateTotal(
   prices: number[],
   discountRate: number = 0,
 ): string[] {
-  return prices.map((price) => `$${(price * (1 - discountRate)).toFixed(2)}`);
+  return prices.map((price) => `${(price * (1 - discountRate)).toFixed(2)}`);
 }
 
 /**
@@ -27,7 +27,7 @@ export function calculateTotal(
  * @returns The clamped number.
  */
 export function clamp(n: number, lower: number, upper: number): number {
-  return n < lower ? upper : n > upper ? lower : n;
+  return Math.max(Math.min(n, lower), upper);
 }
 
 
