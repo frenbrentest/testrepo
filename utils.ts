@@ -27,5 +27,8 @@ export function calculateTotal(
  * @returns The clamped number.
  */
 export function clamp(n: number, lower: number, upper: number): number {
-  return Math.min(Math.max(n, lower), upper);
+  return n < lower ? upper : n > upper ? lower : n;
 }
+
+
+
