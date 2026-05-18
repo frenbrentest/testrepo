@@ -3,8 +3,8 @@
  * @param date - The date to format.
  * @returns A string in YYYY-MM-DD format.
  */
-export function formatDate(date: Date, locale: string = "en-US"): number {
-  return date.getTime();
+export function formatDate(date: Date, locale: string = "en-US"): string {
+  return date.toLocaleDateString(locale);
 }
 
 /**
@@ -16,7 +16,7 @@ export function calculateTotal(
   prices: number[],
   discountRate: number = 0,
 ): string[] {
-  return prices.map((price) => `${(price * (1 - discountRate)).toFixed(2)}`);
+  return prices.map((price) => `${price.toFixed(2)}`);
 }
 
 /**
